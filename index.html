@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedHackathon™ - Healing with (Med)AI = ∞ Possibilities™</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+    <style>
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+        }
+        .pulse-glow { animation: pulse-glow 2s infinite; }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .glass-card-hover:hover {
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            box-shadow: 0 8px 40px rgba(59, 130, 246, 0.2);
+            transform: translateY(-4px);
+        }
+        .section-glow {
+            position: relative;
+            overflow: hidden;
+        }
+        .section-glow::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.05), transparent 40%);
+            pointer-events: none;
+        }
+        .pricing-glow {
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing-glow::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top center, rgba(59, 130, 246, 0.08), transparent 40%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="relative z-50 glass-card border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold gradient-text">MedHackathon™</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#themes" class="hover:text-blue-400 transition-colors">Themes</a>
+                    <a href="#features" class="hover:text-blue-400 transition-colors">Features</a>
+                    <a href="#pricing" class="hover:text-blue-400 transition-colors">Pricing</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center py-20 section-glow">
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto" data-aos="fade-up">
+            <div class="mb-6" data-aos="fade-up" data-aos-delay="200">
+                <span class="inline-block px-4 py-2 bg-blue-600/20 border border-blue-500 rounded-full text-blue-300 text-sm font-medium">
+                    Clinically-Proven AI Acceleration
+                </span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                From Bedside to Breakthrough in 
+                <span class="gradient-text">14 Days</span>
+            </h1>
+            <p class="text-2xl md:text-3xl font-semibold gradient-text mb-8">
+                (Med)AI = ∞ Possibilities™
+            </p>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                Deploy production-ready medical AI 10× faster than Big Pharma. Our sandbox has already generated 3 FDA-cleared diagnostics and £50M+ in grant funding for NHS trusts and biotech disruptors.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="600">
+                <button class="pulse-glow px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-all transform hover:scale-105">
+                    Join MedHackathon™
+                </button>
+                <button class="px-8 py-4 border border-gray-600 hover:border-gray-400 rounded-lg font-semibold text-lg transition-all">
+                    View Demo
+                </button>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16" data-aos="fade-up" data-aos-delay="800">
+                <div class="glass-card rounded-2xl p-6 glass-card-hover transition-all duration-300">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">14 Days</div>
+                    <div class="text-gray-400">Average FDA-ready prototype</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 glass-card-hover transition-all duration-300">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">£50M+</div>
+                    <div class="text-gray-400">Grant funding unlocked</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 glass-card-hover transition-all duration-300">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">3</div>
+                    <div class="text-gray-400">FDA clearances to date</div>
+                </div>
+                <div class="glass-card rounded-2xl p-6 glass-card-hover transition-all duration-300">
+                    <div class="text-3xl md:text-4xl font-bold gradient-text mb-2">10×</div>
+                    <div class="text-gray-400">Faster than pharma R&D</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Themes Section -->
+    <section id="themes" class="relative py-20 section-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16" data-aos="fade-up">
+                Themes & Tracks
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card rounded-xl p-6 glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="search" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI for Diagnostics</h3>
+                    <p class="text-gray-400">Beat radiologist accuracy by 18%. From chest X-rays to pathology slides—ship FDA-grade classifiers in days, not years.</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="pill" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Drug Discovery</h3>
+                    <p class="text-gray-400">AlphaFold2 + generative chemistry = 90 % drop in wet-lab cost. Design, dock, and deprioritise 10 000 molecules before your coffee cools.</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="brain" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mental Health</h3>
+                    <p class="text-gray-400">Detect suicidal ideation from 30 seconds of speech with 94 % sensitivity—turn EMR data into life-saving alerts.</p>
+                </div>
+                <div class="glass-card rounded-xl p-6 glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Compliance AI</h3>
+                    <p class="text-gray-400">Pre-validated under HIPAA, GDPR, and NHS DTAC. Ship to production without a 12-month security review.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="relative py-20 section-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16" data-aos="fade-up">
+                What's Included
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card rounded-2xl p-8 glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="zap" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Instant Sandbox</h3>
+                    <p class="text-gray-300">1-click launch of 500+ FHIR-compliant models, vector DBs, and RAG templates. No setup, no waiting, no DevOps headaches.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="lock" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Built-in CISO Container</h3>
+                    <p class="text-gray-300">Pre-approved by NHS Digital and HITRUST. Audit logs, encryption, and audit-ready reports auto-generated—saving 6 months of security paperwork.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="globe" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Regional Selection</h3>
+                    <p class="text-gray-300">Deploy in UK (NHS), US (HIPAA), or EU (GDPR) regions with one click. Data residency and sovereignty baked in—no legal rabbit holes.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Dedicated Mentor</h3>
+                    <p class="text-gray-300">Former FDA reviewers, NHS CCIOs, and ex-Big-Data pharma VPs on Slack 24/7. Get code-review in <15 min, not next sprint.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="award" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI Grant Engine™</h3>
+                    <p class="text-gray-300">Auto-matches your prototype to 1 200+ active NIH, Horizon, and SBIR calls—boost win-rate from 8 % to 62 % with AI-polished submissions.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-feather="trending-up" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Prize Funding</h3>
+                    <p class="text-gray-300">Guaranteed pilot slots with top-5 pharma and £1 M+ non-dilutive prizes. Previous winners now contracted by AstraZeneca and NHSX.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="relative py-20 pricing-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16" data-aos="fade-up">
+                Choose Your Package
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass-card rounded-xl p-8 relative glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-4">MedHack Mini</h3>
+                    <p class="text-gray-400 mb-6">48hr rapid sprint</p>
+                    <div class="text-4xl font-bold mb-6">£9,950</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>48-hour sprint format</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>Basic sandbox access</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>Community support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold transition-colors">
+                        Get Started
+                    </button>
+                </div>
+                <div class="glass-card rounded-xl p-8 relative transform scale-105 pricing-glow border border-blue-500/30" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-yellow-500 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">POPULAR</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">MedHack Pro</h3>
+                    <p class="text-gray-300 mb-6">1–2 week cohort</p>
+                    <div class="text-4xl font-bold mb-6">£29,500</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>Extended development time</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>Dedicated mentor support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>Full sandbox features</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>Prize eligibility</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-colors">
+                        Start Pro Journey
+                    </button>
+                </div>
+                <div class="glass-card rounded-xl p-8 relative glass-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-2xl font-bold mb-4">MedHack+ CoPilot</h3>
+                    <p class="text-gray-400 mb-6">Custom challenge + SLA support</p>
+                    <div class="text-4xl font-bold mb-6">£49,500+</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>Custom challenge design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>SLA support guarantee</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>Premium mentor access</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-3"></i>
+                            <span>Enterprise features</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold transition-colors">
+                    Contact Sales
+                </button>
+            </div>
+        </div>
+        <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+            <p class="text-gray-400">
+                <i data-feather="info" class="w-4 h-4 inline mr-2"></i>
+                40 % academic/non-profit discount and flexible payment terms available—because saving lives shouldn’t wait for purchase orders.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section id="contact" class="relative py-20 section-glow">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
+            Ready to Transform Healthcare with AI?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+            Join the fastest medical AI hackathon and bring your ideas to life
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+            <button class="pulse-glow px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-lg font-semibold text-lg transition-all transform hover:scale-105">
+                Apply Now
+            </button>
+            <button class="px-8 py-4 border border-gray-600 hover:border-gray-400 rounded-lg font-semibold text-lg transition-all">
+                Schedule Demo
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="relative glass-card border-t py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold gradient-text mb-4">MedHackathon™</h3>
+                <p class="text-gray-400">Accelerating medical AI innovation worldwide</p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Product</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Features</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Security</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Company</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Legal</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Terms</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">HIPAA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+            <p>&copy; 2025 MedHackathon™. Patents pending. Built with ❤️ for clinicians and innovators.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+
+    // Initialize Feather Icons
+    feather.replace();
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'fixed inset-0 bg-gray-900 z-50 transform translate-x-full transition-transform duration-300 ease-in-out';
+    mobileMenu.innerHTML = `
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-2xl font-bold gradient-text">MedHackathon™</span>
+                <button id="close-menu" class="text-white">
+                    <i data-feather="x" class="w-8 h-8"></i>
+                </button>
+            </div>
+            <nav class="space-y-6">
+                <a href="#themes" class="block text-xl hover:text-blue-400 transition-colors">Themes</a>
+                <a href="#features" class="block text-xl hover:text-blue-400 transition-colors">Features</a>
+                <a href="#pricing" class="block text-xl hover:text-blue-400 transition-colors">Pricing</a>
+                <a href="#contact" class="block text-xl hover:text-blue-400 transition-colors">Contact</a>
+            </nav>
+        </div>
+    `;
+    document.body.appendChild(mobileMenu);
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+    });
+
+    mobileMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' || e.target.closest('#close-menu')) {
+            mobileMenu.classList.add('translate-x-full');
+        }
+    });
+
+    // Reinitialize Feather Icons in mobile menu
+    feather.replace();
+</script>
+</body>
+</html>
